@@ -153,6 +153,10 @@
             margin: 10px;
         }
 
+        .like-counter {
+            margin-top: 5px;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -194,14 +198,16 @@
                     <button class="like-button">Wow</button>
                 </div>
                 <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
+                    <button class="reaction-button" onclick="reactCharacter('naruto', '👍')">👍</button>
+                    <button class="reaction-button" onclick="reactCharacter('naruto', '❤️')">❤️</button>
+                    <button class="reaction-button" onclick="reactCharacter('naruto', '😮')">😮</button>
                 </div>
+                <div class="like-counter" id="naruto-like-counter">0 Likes</div>
+                <div class="like-counter" id="naruto-reaction-counter">0 Reactions</div>
             </div>
 
             <!-- Repeat the character cards for other characters -->
-            
+
             <div class="character-card">
                 <img src="sasuke.jpg" alt="Sasuke">
                 <h3>Sasuke Uchiha</h3>
@@ -212,10 +218,12 @@
                     <button class="like-button">Wow</button>
                 </div>
                 <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
+                    <button class="reaction-button" onclick="reactCharacter('sasuke', '👍')">👍</button>
+                    <button class="reaction-button" onclick="reactCharacter('sasuke', '❤️')">❤️</button>
+                    <button class="reaction-button" onclick="reactCharacter('sasuke', '😮')">😮</button>
                 </div>
+                <div class="like-counter" id="sasuke-like-counter">0 Likes</div>
+                <div class="like-counter" id="sasuke-reaction-counter">0 Reactions</div>
             </div>
 
             <div class="character-card">
@@ -228,157 +236,16 @@
                     <button class="like-button">Wow</button>
                 </div>
                 <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
+                    <button class="reaction-button" onclick="reactCharacter('sakura', '👍')">👍</button>
+                    <button class="reaction-button" onclick="reactCharacter('sakura', '❤️')">❤️</button>
+                    <button class="reaction-button" onclick="reactCharacter('sakura', '😮')">😮</button>
                 </div>
-            </div>
-
-            <div class="character-card">
-                <img src="kakashi.jpg" alt="Kakashi">
-                <h3>Kakashi Hatake</h3>
-                <p>Team 7 Sensei</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <img src="itachi.jpg" alt="Itachi">
-                <h3>Itachi Uchiha</h3>
-                <p>Sasuke's brother</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <img src="hinata.jpg" alt="Hinata">
-                <h3>Hinata Hyuga</h3>
-                <p>Naruto's love interest</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class "reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <img src="gaara.jpg" alt="Gaara">
-                <h3>Gaara</h3>
-                <p>Kazekage of the Sand</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
+                <div class="like-counter" id="sakura-like-counter">0 Likes</div>
+                <div class="like-counter" id="sakura-reaction-counter">0 Reactions</div>
             </div>
 
             <!-- Add more character cards as needed -->
 
-            <div class="character-card">
-                <img src="rocklee.jpg" alt="Rock Lee">
-                <h3>Rock Lee</h3>
-                <p>Hardworking Ninja</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <img src="neji.jpg" alt="Neji Hyuga">
-                <h3>Neji Hyuga</h3>
-                <p>Byakugan User</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <img src="tenten.jpg" alt="Tenten">
-                <h3>Tenten</h3>
-                <p>Weapons Specialist</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <img src="jiraiya.jpg" alt="Jiraiya">
-                <h3>Jiraiya</h3>
-                <p>Sannin</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
-
-            <div class="character-card">
-                <img src="orochimaru.jpg" alt="Orochimaru">
-                <h3>Orochimaru</h3>
-                <p>Sannin</p>
-                <div class="like-buttons">
-                    <button class="like-button">Like</button>
-                    <button class="like-button">Love</button>
-                    <button class="like-button">Wow</button>
-                </div>
-                <div class="reactions">
-                    <button class="reaction-button">👍</button>
-                    <button class="reaction-button">❤️</button>
-                    <button class="reaction-button">😮</button>
-                </div>
-            </div>
         </section>
 
         <div id="call-to-action">
@@ -407,5 +274,21 @@
         </div>
 
         <div class="video-container">
-            <
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Add more videos as needed -->
+        </div>
 
+        <script>
+            function reactCharacter(character, reaction) {
+                const reactionCounter = document.getElementById(`${character}-reaction-counter`);
+                let currentReactions = parseInt(reactionCounter.innerText, 10);
+                currentReactions += 1;
+                reactionCounter.innerText = `${currentReactions} Reactions`;
+            }
+        </script>
+    </main>
+</body>
+</html>
