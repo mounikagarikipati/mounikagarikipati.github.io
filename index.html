@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +9,15 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
 
         header {
             background-color: #333;
             color: #fff;
-            text-align: center;
             padding: 10px;
+            text-align: center;
         }
 
         nav {
@@ -29,67 +29,142 @@
         nav a {
             color: #fff;
             text-decoration: none;
+            padding: 10px;
             margin: 0 10px;
         }
 
         main {
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
         }
 
         section {
-            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .character-card {
+            width: 200px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .character-card:hover {
+            transform: scale(1.05);
         }
 
         footer {
             background-color: #333;
             color: #fff;
+            padding: 10px;
             text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 70%;
             padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
 
-        .character-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-
-        .character-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
+        button {
+            background-color: #4CAF50;
+            color: white;
             padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .contact-form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .interactive-element {
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            color: #007bff;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .like-buttons {
+            margin-top: 10px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .like-button {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .like-button:hover {
+            background-color: #2980b9;
+        }
+
+        .reactions {
+            margin-top: 10px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .reaction-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .reaction-button:hover {
+            background-color: #c0392b;
+        }
+
+        .video-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        video {
+            max-width: 100%;
+            margin: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>Naruto Characters</h1>
@@ -103,50 +178,234 @@
     </nav>
 
     <main>
+        <form id="search-form">
+            <input type="text" id="search" name="search" placeholder="Search characters...">
+            <button type="submit">Search</button>
+        </form>
+
         <section>
             <div class="character-card">
-                <img src="naruto.jpg" alt="Naruto Uzumaki" class="character-image">
-                <h2>Naruto Uzumaki</h2>
-                <p>Background information about Naruto...</p>
-                <!-- Add more details about the character -->
-                <a href="#" class="cta-button">Learn More</a>
+                <img src="Naruto.jpg" alt="Naruto">
+                <h3>Naruto Uzumaki</h3>
+                <p>Main Protagonist</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <!-- Repeat the character cards for other characters -->
+            
+            <div class="character-card">
+                <img src="sasuke.jpg" alt="Sasuke">
+                <h3>Sasuke Uchiha</h3>
+                <p>Rival</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="sakura.jpg" alt="Sakura">
+                <h3>Sakura Haruno</h3>
+                <p>Naruto's teammate</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="kakashi.jpg" alt="Kakashi">
+                <h3>Kakashi Hatake</h3>
+                <p>Team 7 Sensei</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="itachi.jpg" alt="Itachi">
+                <h3>Itachi Uchiha</h3>
+                <p>Sasuke's brother</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="hinata.jpg" alt="Hinata">
+                <h3>Hinata Hyuga</h3>
+                <p>Naruto's love interest</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class "reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="gaara.jpg" alt="Gaara">
+                <h3>Gaara</h3>
+                <p>Kazekage of the Sand</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <!-- Add more character cards as needed -->
+
+            <div class="character-card">
+                <img src="rocklee.jpg" alt="Rock Lee">
+                <h3>Rock Lee</h3>
+                <p>Hardworking Ninja</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="neji.jpg" alt="Neji Hyuga">
+                <h3>Neji Hyuga</h3>
+                <p>Byakugan User</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="tenten.jpg" alt="Tenten">
+                <h3>Tenten</h3>
+                <p>Weapons Specialist</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="jiraiya.jpg" alt="Jiraiya">
+                <h3>Jiraiya</h3>
+                <p>Sannin</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="orochimaru.jpg" alt="Orochimaru">
+                <h3>Orochimaru</h3>
+                <p>Sannin</p>
+                <div class="like-buttons">
+                    <button class="like-button">Like</button>
+                    <button class="like-button">Love</button>
+                    <button class="like-button">Wow</button>
+                </div>
+                <div class="reactions">
+                    <button class="reaction-button">👍</button>
+                    <button class="reaction-button">❤️</button>
+                    <button class="reaction-button">😮</button>
+                </div>
             </div>
         </section>
 
-        <!-- Add more character sections as needed -->
-        <section>
-            <div class="character-card">
-                <img src="sasuke.jpg" alt="Sasuke Uchiha" class="character-image">
-                <h2>Sasuke Uchiha</h2>
-                <p>Background information about Sasuke...</p>
-                <a href="#" class="cta-button">Learn More</a>
-            </div>
-        
-            <div class="character-card">
-                <img src="sakura.jpg" alt="Sakura Haruno" class="character-image">
-                <h2>Sakura Haruno</h2>
-                <p>Background information about Sakura...</p>
-                <a href="#" class="cta-button">Learn More</a>
-            </div>
-        
-            <div class="character-card">
-                <img src="kakashi.jpg" alt="Kakashi Hatake" class="character-image">
-                <h2>Kakashi Hatake</h2>
-                <p>Background information about Kakashi...</p>
-                <a href="#" class="cta-button">Learn More</a>
-            </div>
-        </section>
-        <section>
-            <h2>Contact Form</h2>
-            <div class="contact-form">
-                <!-- Add your contact form here -->
-            </div>
-        </section>
-    </main>
+        <div id="call-to-action">
+            <button>Learn More</button>
+            <button>Contact Us</button>
+            <a href="#">View All Characters</a>
+        </div>
 
-    <footer>
-        <p>&copy; 2023 Naruto Characters. All rights reserved.</p>
-    </footer>
-</body>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-</html>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="like-buttons">
+            <button class="like-button">Like</button>
+            <button class="like-button">Love</button>
+            <button class="like-button">Wow</button>
+        </div>
+
+        <div class="video-container">
+            <
+
